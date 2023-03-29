@@ -1,0 +1,28 @@
+{% extends 'customer/customer_home.html' %}
+{% block content %}
+<div class="card">
+  <div class="card-body">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">category_name</th>
+          <th scope="col"> </th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for i in data %}
+        <tr>
+          <th scope="row">{{forloop.counter}}</th>
+          <th>{{i.category_name}}</th>
+
+
+        </tr>
+      {% endfor %}
+
+      </tbody>
+    </table>
+
+  </div>
+</div>
+{% endblock %}

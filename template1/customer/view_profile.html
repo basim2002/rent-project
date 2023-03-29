@@ -1,0 +1,27 @@
+{% extends 'customer/customer_home.html' %}
+{% block content %}
+<div class="card" style="width: 22rem;">
+
+  <div class="card-body">
+    {% for i in data %}
+    <img src="{{i.image.url}}" class="card-img-top"  style="width:300px;height:300px;border-radius:50%;object-fit:cover;" alt="25"/>
+
+
+
+<!--    <ul class="list-group list-group-flush">-->
+<!--      <li class="list-group-item">{{i.username}}</li>-->
+<!--      <li class="list-group-item">{{i.email}}</li>-->
+<!--      <li class="list-group-item">{{i.phone_no}}</li>-->
+<!--    </ul>-->
+
+  </div>
+
+
+  <div class="card-body">
+    <h5 class="card-title">Name: {{i.name}}</h5>
+    <h5 class="card-title">Email: {{i.email}}</h5>
+    <h5 class="card-title">Phone: {{i.phone_no}}</h5>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}

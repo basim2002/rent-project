@@ -1,0 +1,40 @@
+{% extends 'customer/customer_home.html' %}
+{% block content %}
+<div class="card">
+  <div class="card-body">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">name</th>
+          <th scope="col">email</th>
+          <th scope="col">phone_no</th>
+          <th scope="col">image</th>
+
+          <th scope="col"> </th>
+        </tr>
+
+      </thead>
+      <tbody>
+      {% for i in data %}
+        <tr>
+          <th scope="row">{{forloop.counter}}</th>
+          <th>{{i.name}}</th>
+          <td>{{i.email}}</td>
+          <td>{{i.phone_no}}</td>
+          <td><img src="{{i.image.url}}" class="pic" style="width:100px;height:100px;border-radius:50%;object-fit:cover;" alt="25"/> </td>
+          <td></td>
+
+
+
+<!--          <td><a type="button" class="btn btn-primary" href="{% url 'editbook' i.id %}">DELETE</a></td>-->
+
+        </tr>
+      {% endfor %}
+
+      </tbody>
+    </table>
+
+  </div>
+</div>
+{% endblock %}

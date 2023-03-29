@@ -1,0 +1,28 @@
+{% extends 'admin/dashboad.html' %}
+{% block content %}
+<div class="card">
+  <div class="card-body">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">name</th>
+          <th scope="col"> </th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for i in data %}
+        <tr>
+          <th scope="row">{{forloop.counter}}</th>
+          <td>{{i.name}}</td>
+          <td><a type="button" class="btn btn-primary" href="{% url 'districtdelete' i.id %}">DELETE</a></td>
+
+        </tr>
+      {% endfor %}
+
+      </tbody>
+    </table>
+
+  </div>
+</div>
+{% endblock %}

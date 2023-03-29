@@ -1,0 +1,31 @@
+{% extends 'dealer/dealer_home.html' %}
+{% block content %}
+<div class="card">
+  <div class="card-body">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">cust_name</th>
+          <th scope="col">feedback</th>
+
+        </tr>
+      </thead>
+      <tbody>
+      {% for i in data %}
+        <tr>
+          <th scope="row">{{forloop.counter}}</th>
+          <td>{{i.cust_name}}</td>
+          <td>:{{i.feedback}}</td>
+
+<!--          <td><a type="button" class="btn btn-primary" href="{% url 'districtdelete' i.id %}">REPLAY</a></td>-->
+
+        </tr>
+      {% endfor %}
+
+      </tbody>
+    </table>
+
+  </div>
+</div>
+{% endblock %}

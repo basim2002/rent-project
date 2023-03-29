@@ -1,0 +1,40 @@
+{% extends 'dealer/dealer_home.html' %}
+{% block content %}
+<div class="card">
+  <div class="card-body">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">book_name</th>
+          <th scope="col">prize</th>
+          <th scope="col">author</th>
+          <th scope="col">date</th>
+          <th scope="col">image</th>
+          <th scope="col"> </th>
+        </tr>
+
+      </thead>
+      <tbody>
+      {% for i in data %}
+        <tr>
+          <th scope="row">{{forloop.counter}}</th>
+          <th>{{i.book_name}}</th>
+          <td>{{i.prize}}</td>
+          <td>{{i.author}}</td>
+          <td>{{i.date}}</td>
+          <td><img src="{{i.image.url}}" class="pic" style="width:100px;height:100px;border-radius:50%;object-fit:cover;" alt="25"/> </td>
+
+
+          <td><a type="button" class="btn btn-primary" href="{% url 'deletebook' i.id %}">DELETE</a></td>
+          <td><a type="button" class="btn btn-primary" href="{% url 'editbook' i.id %}">EDIT</a></td>
+
+        </tr>
+      {% endfor %}
+
+      </tbody>
+    </table>
+
+  </div>
+</div>
+{% endblock %}
